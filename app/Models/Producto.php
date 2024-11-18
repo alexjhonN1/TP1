@@ -9,6 +9,9 @@ class Producto extends Model
 {
     use HasFactory;
 
+    // Especificar la columna de la clave primaria
+    protected $primaryKey = 'id_producto'; // Asegúrate de que se usa 'id_producto' como clave primaria
+
     // Campos que se pueden llenar de forma masiva
     protected $fillable = ['nombre', 'descripcion', 'precio', 'imagen_url', 'id_categoria', 'stock'];
 
