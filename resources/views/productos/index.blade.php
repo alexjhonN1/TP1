@@ -9,8 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1>Lista de Productos</h1>
-                    
+                    <h1 class="text-2xl font-bold mb-4">Lista de Productos</h1>
+
+                    <!-- Botón Agregar Producto -->
+                    <div class="mb-4">
+                        <a href="{{ route('productos.create') }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">
+                            Agregar Producto
+                        </a>
+                    </div>
+
                     <!-- Formulario de búsqueda -->
                     <form action="{{ route('productos.index') }}" method="GET" class="mb-6">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -82,6 +89,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <!-- Paginación -->
+                    <div class="mt-6">
+                        {{ $productos->links() }}
+                    </div>
                 </div>
             </div>
         </div>
